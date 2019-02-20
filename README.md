@@ -16,6 +16,8 @@ as an Access Point. Even a custom MAC is modified by the firmware if AP Mode is 
 
 However, MAC addresses assigned to Station Mode are not changed by the firmware.
 
+One Caveat for the chosen MAC address - you cannot use a "Locally Administered" MAC Address, i.e., first bit of the first byte un-set, second bit of the first byte set. So, 0x72 is okay, 0x77 is not
+
 The MAC address can be assigned with a call to the esp_wifi_set_mac(ESP_IF_WIFI_STA, &CustomMac[0]) function.
 
 Therefore, by setting the Mode to STA for all devices, the MAC address can be directly assigned to each device, peered
